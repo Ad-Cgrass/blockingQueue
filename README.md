@@ -1,10 +1,10 @@
-##自用，阻塞队列
-###使用方式，如下
-1.任务基层BaseTask
-2.BaseTask里面做完任务主动unlock
+## 自用，阻塞队列
+### 使用方式，如下
+- 1.任务基层BaseTask
+- 2.BaseTask里面做完任务主动unlock
 
 代码如下:
-'''
+```
 public class SoundTask extends BaseTask {
 
     @Override
@@ -46,4 +46,12 @@ public class SoundTask extends BaseTask {
         this.id = id;
     }
 }
-'''
+
+```
+
+如何调用
+```
+   TaskScheduler.getInstance().pause();//任务暂停
+   TaskScheduler.getInstance().removeTask(new SoundTask(callRecord.getName(), callRecord.getId()));//移除任务
+   TaskScheduler.getInstance().resume();//任务恢复
+```
