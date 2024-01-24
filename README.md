@@ -51,7 +51,20 @@ public class SoundTask extends BaseTask {
 
 如何调用
 ```
+   TaskScheduler.getInstance().enqueue(xxx);//加任务
    TaskScheduler.getInstance().pause();//任务暂停
-   TaskScheduler.getInstance().removeTask(new SoundTask(callRecord.getName(), callRecord.getId()));//移除任务
+   //移除任务
+   TaskScheduler.getInstance().removeTask(new SoundTask(callRecord.getName(), callRecord.getId()));
    TaskScheduler.getInstance().resume();//任务恢复
+```
+如何依赖
+```
+dependencies {
+    implementation 'com.github.Ad-Cgrass:blockingQueue:Tag'
+}
+
+repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
 ```
